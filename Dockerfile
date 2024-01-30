@@ -3,6 +3,7 @@ MAINTAINER Lita Li<litalidev@gmail.com>
 
 RUN apt-get update && apt-get install -y openssh-server
 #RUN apt-get update && apt-get install -y openssh-server supervisor
+RUN mkdir -p /var/run/sshd
 #RUN mkdir -p /var/run/sshd /var/log/supervisor
 
 RUN echo 'root:rootpw' | chpasswd
