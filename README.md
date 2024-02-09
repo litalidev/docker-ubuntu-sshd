@@ -1,5 +1,5 @@
 # docker-ubuntu-sshd
-A simple ubuntu based docker image with sshd using supervisord
+A simple ubuntu based docker image with sshd
 
 To build
 
