@@ -2,8 +2,7 @@ name: Docker Image CI
 
 on:
   create:
-    tags:
-      - 2*
+    tags: [ "2*" ]
   push:
     branches: [ "22.04" ]
   #pull_request:
