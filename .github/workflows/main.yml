@@ -42,4 +42,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:${{ env.BRANCH }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-sshd:${{ env.BRANCH }}
