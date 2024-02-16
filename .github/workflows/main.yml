@@ -20,7 +20,9 @@ jobs:
       uses: actions/checkout@v4
 
     - name: What
-      run: a=${GITHUB_REF##*/}&&echo "BRANCH=${a%-*}"&&echo "RELEASE=${a%.*}" >> $GITHUB_ENV
+      run: |
+        a=${GITHUB_REF##*/}&&echo "BRANCH=${a%-*}" >> $GITHUB_ENV
+        a=${GITHUB_REF##*/}&&echo "RELEASE=${a%.*}" >> $GITHUB_ENV
       #run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
     #- name: branch
@@ -48,5 +50,5 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-sshd:${{ env.BRANCH }} , ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-sshd:${{ env.RELEASE }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-sshd:${{ env.BRANCH }}, ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-sshd:${{ env.RELEASE }}
         build-args: OS_RELEASE=${{ env.RELEASE }}
