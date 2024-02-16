@@ -18,9 +18,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
     - name: What
-      run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
-        #run: echo "BRANCH=${BRANCH1##-*}" >> $GITHUB_ENV
+    - run: echo "BRANCH1=${GITHUB_REF##*/}" >> $GITHUB_ENV
+    - run: echo "BRANCH=${BRANCH1##-*}" >> $GITHUB_ENV
+
     #- name: Build the Docker image
     #  run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - name: Login to Docker Hub
