@@ -3,7 +3,7 @@ A simple ubuntu based docker image with sshd
 
 To build
 
-  docker build -t litalidev/docker-ubuntu-sshd:22.04
+  docker build -t litalidev/docker-ubuntu-sshd:22.04 --build-arg OS_RELEASE=22.04
 
 
 To test

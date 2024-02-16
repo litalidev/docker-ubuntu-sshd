@@ -49,3 +49,4 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-sshd:${{ env.BRANCH }} , ${{ secrets.DOCKERHUB_USERNAME }}/docker-ubuntu-sshd:${{ env.RELEASE }}
+        build-args: OS_RELEASE=${{ env.RELEASE }}
